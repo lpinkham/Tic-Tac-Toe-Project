@@ -2,7 +2,7 @@
 
 const store = require('../store')
 
-// helper function used for sign in functions
+// helper function
 const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
@@ -15,65 +15,65 @@ const failureMessage = message => {
   $('#message').addClass('failure')
   $('form').trigger('reset')
 }
+const hideShow = () => {
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+}
+const showHide = () => {
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+}
 // end of helper functions
 
 const signUpSuccessful = responseData => {
-  $('#message').text('You signed up successfully')
-  // this will add a css class to the message element.
-  $('#message').removeClass('failure')
-  $('#message').addClass('success')
-  $('form').trigger('reset')
+  successMessage('You signed up successfully')
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').hide()
+  $('#sign-in').show()
 }
 
 const signUpFailure = responseData => {
-  $('#message').text('You failed to sign up')
-  // this will add a css class to the message element.
-  $('#message').removeClass('success')
-  $('#message').addClass('failure')
-  $('form').trigger('reset')
+  failureMessage('You failed to sign up')
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').hide()
 }
 
 const signInSuccessful = responseData => {
-  console.log('response data ' + responseData)
   successMessage('You signed in successfully')
-  store.user = responseData.user // keeping track of the user token so we can have the token for the api
-  // we use 'store' so we can access the token in any file
+  store.user = responseData.user
+  showHide()
 }
 
 const signInFailure = responseData => {
-  successMessage('You failed to sign in')
+  failureMessage('You failed to sign in')
+  hideShow()
 }
 
 const changePasswordSuccessful = responseData => {
-  $('#message').text('You changed your password successfully')
-  // this will add a css class to the message element.
-  $('#message').removeClass('failure')
-  $('#message').addClass('success')
-  $('form').trigger('reset')
+  successMessage('You changed your password successfully')
+  showHide()
 }
 
 const changePasswordFailure = responseData => {
-  $('#message').text('You failed to change your password')
-  // this will add a css class to the message element.
-  $('#message').removeClass('success')
-  $('#message').addClass('failure')
-  $('form').trigger('reset')
+  failureMessage('You failed to change your password')
+  showHide()
 }
 
-const signOutSuccessful = () => { // don't need any parameters here because we don't have any form data
-  $('#message').text('You signed out successfully')
-  // this will add a css class to the message element.
-  $('#message').removeClass('failure')
-  $('#message').addClass('success')
-  $('form').trigger('reset')
+const signOutSuccessful = () => {
+  successMessage('You signed out successfully')
+  hideShow()
 }
 
 const signOutFailure = () => {
-  $('#message').text('You failed to sign out')
-  // this will add a css class to the message element.
-  $('#message').removeClass('success')
-  $('#message').addClass('failure')
-  $('form').trigger('reset')
+  failureMessage('You failed to sign out')
+  showHide()
 }
 
 module.exports = {

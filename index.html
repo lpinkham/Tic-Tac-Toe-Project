@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,58 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic Tac Toe</h1>
+
+      <h2 id="message"></h2>
+
+      <main>
+        <p class="want-to-play">Want to play a game of Tic Tac Toe? Sign-in or sign-up.</p>
+
+        <div class="container outerBox">
+          <h2>Game Board</h2>
+          <div class="row">
+            <div class="game-square">1</div>
+            <div class="game-square">2</div>
+            <div class="game-square">3</div>
+          </div>
+          <div class="row">
+            <div class="game-square">4</div>
+            <div class="game-square">5</div>
+            <div class="game-square">6</div>
+          </div>
+          <div class="row">
+            <div class="game-square">7</div>
+            <div class="game-square">8</div>
+            <div class="game-square">9</div>
+          </div>
+
+      </main>
+
+        <form id="sign-up" class="">
+          <h4>Sign Up</h4>
+          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)">
+          <input class="" type="password" name="credentials[password]" placeholder="Password">
+          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button class="btn-primary">Sign-Up!</button>
+        </form>
+
+        <form id="sign-in" class="">
+      <h4>Sign In</h4>
+        <input type="email" name="credentials[email]" placeholder="Enter email address">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <button class="btn-primary">Sign-In!</button>
+      </form>
+
+      <form id="change-password" class="hide">
+      <h4>Change Your Password</h4>
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+      <button class="btn-primary">Change Password</button>
+      </form>
+
+      <form id="sign-out" class="hide">
+      <h4>Sign Out</h4>
+          <button class="btn-primary">Sign Out</button>
+      </form>
     </body>
 </html>

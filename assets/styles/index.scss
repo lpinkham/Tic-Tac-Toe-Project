@@ -1,1 +1,31 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  color: #f00;
+  text-align: center;
+}
+
+.game-square {
+  border: 2px solid blue;
+  display: inline-block;
+  height: 120px;
+  margin: 1em;
+  text-align: center;
+  width: 120px;
+}
+
+.hide {
+  display: none; // use none or visible
+}
+
+.outerBox {
+  align-items: center;
+  border-style: solid;
+  border-width: 2px 4px 2px 4px;
+}
+
+.want-to-play {
+  font-family: cursive;
+  font-size: 1.5em;
+  text-align: center;
+}
