@@ -50,10 +50,31 @@ const createGameBoard = () => {
   })
 }
 
+// update game Board
+const updateAPIGameBoard = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.newGame.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token // store is an object that all these files have access to if you require the store file
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': 0, // hard coded this for now. Need to pull in the square ID that was clicked in
+          'value': 'x' // hard coded this for now. Need to pull in the value of the square, X or O
+        },
+        'over': false
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createGameBoard
+  createGameBoard,
+  updateAPIGameBoard
 }

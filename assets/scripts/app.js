@@ -14,4 +14,5 @@ $(() => {
   $('#top-left').on('click', gameLogic.onClickBoard)
   $('#new-game-btn').on('click', authEvents.onClickNewGame)
   $('#sign-in-text').on('click', authEvents.onClickSignInText)
+  $('#top-left').on('click', authEvents.onTopLeftSquareClick)
 })

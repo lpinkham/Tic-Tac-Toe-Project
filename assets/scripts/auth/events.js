@@ -46,6 +46,9 @@ const onClickNewGame = event => {
     .then(ui.createNewGameSuccessful)
     .catch(ui.createNewGameFailure)
 }
+const onTopLeftSquareClick = event => {
+  api.updateAPIGameBoard()
+}
 
 module.exports = {
   onSignUp,
@@ -53,6 +56,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onClickSignInText,
-  onClickNewGame
+  onClickNewGame,
+  onTopLeftSquareClick
 
 }

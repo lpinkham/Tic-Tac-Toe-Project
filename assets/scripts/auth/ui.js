@@ -59,8 +59,8 @@ const signInSuccessful = responseData => {
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
-  // console.log('store game id is', store.newGame)
-  // console.log(store.newGame)
+  console.log('store game id is', store.newGame.id)
+  //  console.log(store.newGame)
   $('#game-board').show()
 }
 const createNewGameFailure = responseData => {
