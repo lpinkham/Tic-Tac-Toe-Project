@@ -12,7 +12,6 @@ $(() => {
 
   // event handler for game Board
   $('#top-left').on('click', gameLogic.onClickBoard)
-  $('#new-game-btn').on('click', gameLogic.onClickNewGame)
+  $('#new-game-btn').on('click', authEvents.onClickNewGame)
   $('#sign-in-text').on('click', authEvents.onClickSignInText)
-  // $('#sign-in-btn').on('click', authEvents.onClickSignInBtn)
 })

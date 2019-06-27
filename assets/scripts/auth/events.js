@@ -18,6 +18,7 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccessful)
+  //    .then(api.createGameBoard)// just showing that you can call two functions with .then()
     .catch(ui.signInFailure)
 }
 
@@ -40,12 +41,18 @@ const onClickSignInText = function () {
   event.preventDefault()
   ui.showSignInForm()
 }
+const onClickNewGame = event => {
+  api.createGameBoard()
+    .then(ui.createNewGameSuccessful)
+    .catch(ui.createNewGameFailure)
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onClickSignInText
+  onClickSignInText,
+  onClickNewGame
 
 }

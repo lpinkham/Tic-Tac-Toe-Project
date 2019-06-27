@@ -51,10 +51,21 @@ const signInSuccessful = responseData => {
   // showHide()
   $('#sign-in').hide()
   $('#form-div').hide()
-  $('#game-board').show()
+  $('#game-board').hide()
+  $('#new-game-btn').show()
   $('#sign-in-text').hide()
   $('#game-play-text').hide()
   $('#account-text').text('My Account')
+}
+const createNewGameSuccessful = responseData => {
+  store.newGame = responseData.game
+  // console.log('store game id is', store.newGame)
+  // console.log(store.newGame)
+  $('#game-board').show()
+}
+const createNewGameFailure = responseData => {
+  failureMessage('You failed to create a game')
+  // hideShow()
 }
 
 const signInFailure = responseData => {
@@ -98,5 +109,7 @@ module.exports = {
   changePasswordFailure,
   signOutSuccessful,
   signOutFailure,
-  showSignInForm
+  showSignInForm,
+  createNewGameSuccessful,
+  createNewGameFailure
 }
