@@ -2,11 +2,18 @@
 
 h1 {
   color: #f00;
+  font-family: cursive;
+  padding: 20px;
+  text-align: center;
+}
+
+.center {
+  align-items: center;
   text-align: center;
 }
 
 .game-square {
-  border: 2px solid blue;
+  border: 2px solid #0000ff;
   display: inline-block;
   height: 120px;
   margin: 1em;
@@ -18,10 +25,21 @@ h1 {
   display: none; // use none or visible
 }
 
-.outerBox {
+.my-account {
+  font-size: .75em;
+  text-align: right;
+}
+
+.outer-box {
   align-items: center;
   border-style: solid;
-  border-width: 2px 4px 2px 4px;
+  border-width: 2px 4px;
+}
+
+.sign-in-button {
+  border: 0;
+  font-family: cursive;
+  text-align: center;
 }
 
 .want-to-play {

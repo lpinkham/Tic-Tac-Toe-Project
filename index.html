@@ -12,19 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="my-account" id="account-text">
+      </div>
+
       <h1>Tic Tac Toe</h1>
 
       <h2 id="message"></h2>
 
       <main>
-        <p class="want-to-play">Want to play a game of Tic Tac Toe? Sign-in or sign-up.</p>
+        <p class="want-to-play" id="game-play-text">Want to play a game of Tic Tac Toe?</p>
+          <p class="center" id="sign-in-text">Sign-In</p>
 
-        <div class="container outerBox">
-          <h2>Game Board</h2>
+      <div id="form-div">
+      </div>
+      <div id="no-account">
+      </div>
+        <form id="sign-in" class="hide center">
+        <input type="email" name="credentials[email]" placeholder="Enter email address"><br>
+          <input type="password" name="credentials[password]" placeholder="Password"><br>
+          <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
+        </form>
+
+        <form id="sign-up" class="hide center">
+          <h4>Sign Up</h4>
+          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)">
+          <input class="" type="password" name="credentials[password]" placeholder="Password">
+          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button class="btn-primary">Sign-Up!</button>
+        </form>
+
+        <button class="btn-primary hide" id="new-game-btn">New Game</button>
+
+
+        <div class="container outer-box hide" id="game-board">
+          <h2>To begin place an X in a square</h2>
           <div class="row">
-            <div class="game-square">1</div>
-            <div class="game-square">2</div>
-            <div class="game-square">3</div>
+            <div class="game-square" id="top-left">1</div>
+            <div class="game-square" id="top-middle">2</div>
+            <div class="game-square" id="top-right">3</div>
           </div>
           <div class="row">
             <div class="game-square">4</div>
@@ -38,21 +63,6 @@
           </div>
 
       </main>
-
-        <form id="sign-up" class="">
-          <h4>Sign Up</h4>
-          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)">
-          <input class="" type="password" name="credentials[password]" placeholder="Password">
-          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <button class="btn-primary">Sign-Up!</button>
-        </form>
-
-        <form id="sign-in" class="">
-      <h4>Sign In</h4>
-        <input type="email" name="credentials[email]" placeholder="Enter email address">
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <button class="btn-primary">Sign-In!</button>
-      </form>
 
       <form id="change-password" class="hide">
       <h4>Change Your Password</h4>

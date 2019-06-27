@@ -46,7 +46,7 @@ const signUpFailure = responseData => {
 }
 
 const signInSuccessful = responseData => {
-  successMessage('You signed in successfully')
+  // successMessage('You signed in successfully')
   store.user = responseData.user
   showHide()
 }
