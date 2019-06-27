@@ -7,6 +7,11 @@ h1 {
   text-align: center;
 }
 
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
 .center {
   align-items: center;
   text-align: center;
@@ -46,4 +51,9 @@ h1 {
   font-family: cursive;
   font-size: 1.5em;
   text-align: center;
+}
+
+#sign-in {
+  margin: 10px;
+  padding: 40px;
 }
