@@ -36,11 +36,16 @@ const onSignOut = event => {
     .then(ui.signOutSuccessful)
     .catch(ui.signOutFailure)
 }
+const onClickSignInText = function () {
+  event.preventDefault()
+  ui.showSignInForm()
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onClickSignInText
 
 }

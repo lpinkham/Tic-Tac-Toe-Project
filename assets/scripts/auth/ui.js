@@ -48,7 +48,13 @@ const signUpFailure = responseData => {
 const signInSuccessful = responseData => {
   // successMessage('You signed in successfully')
   store.user = responseData.user
-  showHide()
+  // showHide()
+  $('#sign-in').hide()
+  $('#form-div').hide()
+  $('#game-board').show()
+  $('#sign-in-text').hide()
+  $('#game-play-text').hide()
+  $('#account-text').text('My Account')
 }
 
 const signInFailure = responseData => {
@@ -76,6 +82,11 @@ const signOutFailure = () => {
   showHide()
 }
 
+const showSignInForm = () => {
+  $('#form-div').show()
+  $('#sign-in').show()
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -86,5 +97,6 @@ module.exports = {
   changePasswordSuccessful,
   changePasswordFailure,
   signOutSuccessful,
-  signOutFailure
+  signOutFailure,
+  showSignInForm
 }
