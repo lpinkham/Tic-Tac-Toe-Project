@@ -10,6 +10,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#account-text').on('click', authEvents.onMyAccount)
 
   // event handler for game Board
   $('#new-game-btn').on('click', authEvents.onClickNewGame)

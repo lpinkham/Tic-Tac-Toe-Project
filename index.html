@@ -12,7 +12,19 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="my-account" id="account-text">
+      <div class="my-account hide" id="account-text">My Account
+      </div>
+      <div class="hide" id="myAccount">
+        <form id="change-password" class="">
+        <h6>Change Your Password</h6>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+        <button class="btn-primary">Change Password</button>
+        </form>
+
+        <form id="sign-out" class="">
+          <button class="btn-primary">Sign Out</button>
+        </form>
       </div>
 
       <h1>Tic Tac Toe</h1>
@@ -68,16 +80,5 @@
 
       </main>
 
-      <form id="change-password" class="hide">
-      <h4>Change Your Password</h4>
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-      <button class="btn-primary">Change Password</button>
-      </form>
-
-      <form id="sign-out" class="hide">
-      <h4>Sign Out</h4>
-          <button class="btn-primary">Sign Out</button>
-      </form>
     </body>
 </html>

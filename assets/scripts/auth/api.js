@@ -70,11 +70,22 @@ const updateAPIGameBoard = (p, i, g) => {
   })
 }
 
+const showAPIGameBoard = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.newGame.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token // store is an object that all these files have access to if you require the store file
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   createGameBoard,
-  updateAPIGameBoard
+  updateAPIGameBoard,
+  showAPIGameBoard
 }

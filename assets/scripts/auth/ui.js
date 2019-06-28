@@ -68,12 +68,14 @@ const signInSuccessful = responseData => {
   $('#new-game-btn').show()
   $('#sign-in-text').hide()
   $('#game-play-text').hide()
-  $('#account-text').text('My Account')
+  $('#account-text').show()
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
   $('#game-board').show()
   $('#users-turn').show()
+  $('#change-password').hide()
+  $('#sign-out').hide()
   usersTurnHelper()
 }
 const createNewGameFailure = responseData => {
@@ -96,8 +98,13 @@ const changePasswordFailure = responseData => {
 }
 
 const signOutSuccessful = () => {
-  successMessage('You have signed out')
-  hideShow()
+  // successMessage('You have signed out')
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').hide()
+  $('#sign-in').show()
+  $('#new-game-btn').hide()
+  $('#sign-in-text').show()
 }
 
 const signOutFailure = () => {
@@ -108,6 +115,10 @@ const signOutFailure = () => {
 const showSignInForm = () => {
   $('#form-div').show()
   $('#sign-in').show()
+}
+
+const showMyAccount = () => {
+  $('#myAccount').show()
 }
 
 module.exports = {
@@ -123,5 +134,6 @@ module.exports = {
   signOutFailure,
   showSignInForm,
   createNewGameSuccessful,
-  createNewGameFailure
+  createNewGameFailure,
+  showMyAccount
 }

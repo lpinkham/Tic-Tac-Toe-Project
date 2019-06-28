@@ -50,6 +50,10 @@ const onTopLeftSquareClick = event => {
   // make square not clickable.
   api.updateAPIGameBoard()
 }
+const onMyAccount = function () {
+  event.preventDefault()
+  ui.showMyAccount()
+}
 
 module.exports = {
   onSignUp,
@@ -58,6 +62,7 @@ module.exports = {
   onSignOut,
   onClickSignInText,
   onClickNewGame,
-  onTopLeftSquareClick
+  onTopLeftSquareClick,
+  onMyAccount
 
 }
