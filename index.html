@@ -17,8 +17,6 @@
 
       <h1>Tic Tac Toe</h1>
 
-      <h2 id="message"></h2>
-
       <main>
         <p class="want-to-play" id="game-play-text">Want to play a game of Tic Tac Toe?</p>
           <p class="center" id="sign-in-text">Sign-In</p>
@@ -27,6 +25,9 @@
       </div>
       <div id="no-account">
       </div>
+
+      <h5 id="message" class="message-header"></h5>
+
         <form id="sign-in" class="hide center">
         <input type="email" name="credentials[email]" placeholder="Enter email address"><br>
           <input type="password" name="credentials[password]" placeholder="Password"><br>
@@ -34,17 +35,20 @@
         </form>
 
         <form id="sign-up" class="hide center">
-          <h4>Sign Up</h4>
-          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)">
-          <input class="" type="password" name="credentials[password]" placeholder="Password">
-          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <h5>Sign Up</h5>
+          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)"><br>
+          <input class="" type="password" name="credentials[password]" placeholder="Password"><br>
+          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
           <button class="btn-primary">Sign-Up!</button>
         </form>
 
-        <button class="btn-primary hide" id="new-game-btn">New Game</button>
+        <button class="btn-primary hide center" id="new-game-btn">New Game</button>
 
 
         <div class="container outer-box hide" id="game-board">
+
+          <p class="users-turn">It is payer X turn</p>
+
           <h2>To begin place an X in a square</h2>
           <div class="row">
             <div class="game-square" id="top-left" data-cell-index='0'></div>

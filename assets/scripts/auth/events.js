@@ -47,6 +47,7 @@ const onClickNewGame = event => {
     .catch(ui.createNewGameFailure)
 }
 const onTopLeftSquareClick = event => {
+  // make square not clickable.
   api.updateAPIGameBoard()
 }
 

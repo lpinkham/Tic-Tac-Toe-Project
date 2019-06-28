@@ -8,8 +8,9 @@ h1 {
 }
 
 input {
-  padding: 10px;
   margin: 10px;
+  padding: 10px;
+
 }
 
 .center {
@@ -30,6 +31,9 @@ input {
   display: none; // use none or visible
 }
 
+.message-header {
+  text-align: center;
+}
 .my-account {
   font-size: .75em;
   text-align: right;

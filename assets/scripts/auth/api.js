@@ -51,7 +51,7 @@ const createGameBoard = () => {
 }
 
 // update game Board
-const updateAPIGameBoard = () => {
+const updateAPIGameBoard = (p, i, g) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.newGame.id,
     method: 'PATCH',
@@ -61,10 +61,10 @@ const updateAPIGameBoard = () => {
     data: {
       'game': {
         'cell': {
-          'index': 0, // hard coded this for now. Need to pull in the square ID that was clicked in
-          'value': 'x' // hard coded this for now. Need to pull in the value of the square, X or O
+          'index': i,
+          'value': p
         },
-        'over': false
+        'over': g
       }
     }
   })

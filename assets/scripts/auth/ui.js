@@ -7,12 +7,14 @@ const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('#message').css('color', 'green')
   $('form').trigger('reset')
 }
 const failureMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('success')
   $('#message').addClass('failure')
+  $('#message').css('color', 'red')
   $('form').trigger('reset')
 }
 const hideShow = () => {
@@ -26,6 +28,17 @@ const showHide = () => {
   $('#sign-out').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+}
+const usersTurnHelper = () => {
+  $('#top-left').text('')
+  $('#top-middle').text('')
+  $('#top-right').text('')
+  $('#middle-left').text('')
+  $('#middle-middle').text('')
+  $('#middle-right').text('')
+  $('#bottom-left').text('')
+  $('#bottom-middle').text('')
+  $('#bottom-right').text('')
 }
 // end of helper functions
 
@@ -59,17 +72,16 @@ const signInSuccessful = responseData => {
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
-  console.log('store game id is', store.newGame.id)
-  //  console.log(store.newGame)
   $('#game-board').show()
+  $('#users-turn').show()
+  usersTurnHelper()
 }
 const createNewGameFailure = responseData => {
-  failureMessage('You failed to create a game')
-  // hideShow()
+  failureMessage('Please try again. We were unable to create a new game')
 }
 
 const signInFailure = responseData => {
-  failureMessage('You failed to sign in')
+  failureMessage('Please try again. Your email or password is incorrect. If you need to create an account you can do so below.')
   hideShow()
 }
 
@@ -79,17 +91,17 @@ const changePasswordSuccessful = responseData => {
 }
 
 const changePasswordFailure = responseData => {
-  failureMessage('You failed to change your password')
+  failureMessage('Please try again. We were unable to change your password')
   showHide()
 }
 
 const signOutSuccessful = () => {
-  successMessage('You signed out successfully')
+  successMessage('You have signed out')
   hideShow()
 }
 
 const signOutFailure = () => {
-  failureMessage('You failed to sign out')
+  failureMessage('You sign out failed. You are still logged in. Please try again.')
   showHide()
 }
 
