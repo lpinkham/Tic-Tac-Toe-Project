@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const gameLogic = require('./../game-logic/game-logic.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -18,7 +19,6 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccessful)
-  //    .then(api.createGameBoard)// just showing that you can call two functions with .then()
     .catch(ui.signInFailure)
 }
 
@@ -44,14 +44,12 @@ const onClickSignInText = function () {
 const onClickNewGame = event => {
   api.createGameBoard()
     .then(ui.createNewGameSuccessful)
+    .then(gameLogic.clearSquares)
     .catch(ui.createNewGameFailure)
 }
-const onTopLeftSquareClick = event => {
-  // make square not clickable.
-  api.updateAPIGameBoard()
-}
-const onMyAccount = function () {
-  event.preventDefault()
+
+const onMyAccount = event => {
+  // event.preventDefault()
   ui.showMyAccount()
 }
 
@@ -62,7 +60,6 @@ module.exports = {
   onSignOut,
   onClickSignInText,
   onClickNewGame,
-  onTopLeftSquareClick,
   onMyAccount
 
 }

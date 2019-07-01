@@ -12,7 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="my-account hide" id="account-text">My Account
+
+      <div class="my-account" id="account-text"><button class="hide" id="account-btn">My Account</button>
       </div>
       <div class="hide" id="myAccount">
         <form id="change-password" class="">
@@ -31,17 +32,12 @@
 
       <main>
         <p class="want-to-play" id="game-play-text">Want to play a game of Tic Tac Toe?</p>
-          <p class="center" id="sign-in-text">Sign-In</p>
-
-      <div id="form-div">
-      </div>
-      <div id="no-account">
-      </div>
+        <p class="center" id="sign-in-text">Sign-In</p>
 
       <h5 id="message" class="message-header"></h5>
 
         <form id="sign-in" class="hide center">
-        <input type="email" name="credentials[email]" placeholder="Enter email address"><br>
+          <input type="email" name="credentials[email]" placeholder="Enter email address"><br>
           <input type="password" name="credentials[password]" placeholder="Password"><br>
           <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
         </form>
@@ -54,14 +50,12 @@
           <button class="btn-primary">Sign-Up!</button>
         </form>
 
-        <button class="btn-primary hide center" id="new-game-btn">New Game</button>
-
+        <div class="center"><button class="hide" id="new-game-btn">New Game</button>
+        </div>
 
         <div class="container outer-box hide" id="game-board">
 
-          <p class="users-turn">It is payer X turn</p>
-
-          <h2>To begin place an X in a square</h2>
+        <h2 id="game-message">Player X - you go first. Place an X somewhere on the board</h2>
           <div class="row">
             <div class="game-square" id="top-left" data-cell-index='0'></div>
             <div class="game-square" id="top-middle" data-cell-index='1'></div>
@@ -77,6 +71,7 @@
             <div class="game-square" id="bottom-middle" data-cell-index='7'></div>
             <div class="game-square" id="bottom-right" data-cell-index='8'></div>
           </div>
+        </div>
 
       </main>
 

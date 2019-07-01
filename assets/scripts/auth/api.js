@@ -10,6 +10,7 @@ const signUp = formData => {
     method: 'POST'
   })
 }
+
 const signIn = formData => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -39,7 +40,6 @@ const signOut = () => { // we aren't asking for any args so we don't need the fo
   })
 }
 
-// attempting to call API for game board object
 const createGameBoard = () => {
   return $.ajax({
     url: config.apiUrl + '/games',

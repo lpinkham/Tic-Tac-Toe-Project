@@ -39,6 +39,7 @@ const usersTurnHelper = () => {
   $('#bottom-left').text('')
   $('#bottom-middle').text('')
   $('#bottom-right').text('')
+  $('#game-message').text('Player X place your X on the board')
 }
 // end of helper functions
 
@@ -63,12 +64,13 @@ const signInSuccessful = responseData => {
   store.user = responseData.user
   // showHide()
   $('#sign-in').hide()
-  $('#form-div').hide()
   $('#game-board').hide()
   $('#new-game-btn').show()
   $('#sign-in-text').hide()
   $('#game-play-text').hide()
-  $('#account-text').show()
+  // $('#account-text').show()
+  $('#form').trigger('reset')
+  $('#account-btn').show()
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
@@ -104,7 +106,9 @@ const signOutSuccessful = () => {
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#new-game-btn').hide()
+  $('#game-board').hide()
   $('#sign-in-text').show()
+  $('form').trigger('reset')
 }
 
 const signOutFailure = () => {
@@ -113,12 +117,17 @@ const signOutFailure = () => {
 }
 
 const showSignInForm = () => {
-  $('#form-div').show()
   $('#sign-in').show()
 }
 
 const showMyAccount = () => {
   $('#myAccount').show()
+  $('#change-password').show()
+  $('#sign-out').show()
+}
+
+const showGameMessage = (message) => {
+  $('#game-message').text(message)
 }
 
 module.exports = {
@@ -135,5 +144,6 @@ module.exports = {
   showSignInForm,
   createNewGameSuccessful,
   createNewGameFailure,
-  showMyAccount
+  showMyAccount,
+  showGameMessage
 }

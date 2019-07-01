@@ -3,6 +3,7 @@
 h1 {
   color: #f00;
   font-family: cursive;
+  font-size: 3em;
   padding: 20px;
   text-align: center;
 }
@@ -21,10 +22,11 @@ input {
 .game-square {
   border: 2px solid #0000ff;
   display: inline-block;
-  height: 120px;
+  height: 150px;
   margin: 1em;
+  padding: 0;
   text-align: center;
-  width: 120px;
+  width: 150px;
 }
 
 .hide {
@@ -53,7 +55,7 @@ input {
 
 .want-to-play {
   font-family: cursive;
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
 }
 
