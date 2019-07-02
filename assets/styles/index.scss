@@ -20,11 +20,16 @@ input {
 }
 
 .game-square {
-  border: 2px solid #0000ff;
+  align-items: center;
+  background-color: white;
+  border: 2px solid black;
   display: inline-block;
+  font-size: 3em;
   height: 150px;
+  justify-content: center;
   margin: 1em;
   padding: 0;
+  margin: 0;
   text-align: center;
   width: 150px;
 }
@@ -36,6 +41,7 @@ input {
 .message-header {
   text-align: center;
 }
+
 .my-account {
   font-size: .75em;
   text-align: right;
@@ -43,8 +49,10 @@ input {
 
 .outer-box {
   align-items: center;
+  background-color: #d3d3d3;
   border-style: solid;
   border-width: 2px 4px;
+
 }
 
 .sign-in-button {
@@ -59,7 +67,7 @@ input {
   text-align: center;
 }
 
-#sign-in {
+.sign-in {
   margin: 10px;
   padding: 40px;
 }

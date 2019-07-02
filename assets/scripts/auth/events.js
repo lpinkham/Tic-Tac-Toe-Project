@@ -3,7 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-// const gameLogic = require('./../game-logic/game-logic.js')
+const gameLogic = require('./../game-logic/game-logic.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -44,7 +44,7 @@ const onClickSignInText = function () {
 const onClickNewGame = event => {
   api.createGameBoard()
     .then(ui.createNewGameSuccessful)
-    // .then(gameLogic.clearSquares)
+    .then(gameLogic.clearSquares)
     .catch(ui.createNewGameFailure)
 }
 

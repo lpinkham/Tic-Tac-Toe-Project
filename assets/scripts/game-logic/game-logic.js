@@ -132,6 +132,8 @@ const onClickBoardBR = function () {
 }
 
 const isGameOver = () => {
+  api.showAPIGameBoard()
+    .then(ui.updateGameSuccess)
   if (numGameMoves > 4) {
     if ((store.newGame.cells[0] != null) && (store.newGame.cells[0] === store.newGame.cells[1]) && (store.newGame.cells[0] === store.newGame.cells[2])) {
       gameOver = true
