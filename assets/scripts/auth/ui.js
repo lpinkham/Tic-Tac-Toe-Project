@@ -41,7 +41,6 @@ const usersTurnHelper = () => {
   $('#bottom-right').text('')
   $('#game-message').text('Player X place your X on the board')
 }
-// end of helper functions
 
 const signUpSuccessful = responseData => {
   successMessage('You signed up successfully')
@@ -62,7 +61,7 @@ const signUpFailure = responseData => {
 const signInSuccessful = responseData => {
   // successMessage('You signed in successfully')
   store.user = responseData.user
-  console.log(store.user)
+  // console.log(store.user)
   // showHide()
   $('#sign-in').hide()
   $('#game-board').hide()

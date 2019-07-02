@@ -2,7 +2,6 @@
 
 const authEvents = require('./auth/events')
 const gameLogic = require('./game-logic/game-logic')
-// const game = require('./game-logic/game')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -14,7 +13,6 @@ $(() => {
   $('#sign-in-text').on('click', authEvents.onClickSignInText)
 
   // event handler for game Board
-
   $('#top-left').on('click', gameLogic.onClickBoardTL)
   $('#top-middle').on('click', gameLogic.onClickBoardTM)
   $('#top-right').on('click', gameLogic.onClickBoardTR)
