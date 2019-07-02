@@ -46,7 +46,8 @@ const createGameBoard = () => {
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token // store is an object that all these files have access to if you require the store file
-    }
+    },
+    data: {}
   })
 }
 

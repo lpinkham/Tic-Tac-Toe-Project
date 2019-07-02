@@ -62,6 +62,7 @@ const signUpFailure = responseData => {
 const signInSuccessful = responseData => {
   // successMessage('You signed in successfully')
   store.user = responseData.user
+  console.log(store.user)
   // showHide()
   $('#sign-in').hide()
   $('#game-board').hide()
@@ -129,6 +130,12 @@ const showMyAccount = () => {
 const showGameMessage = (message) => {
   $('#game-message').text(message)
 }
+const showNumWinMessage = (message) => {
+  $('#wins').text(message)
+}
+const updateGameSuccess = (responseData) => {
+  store.newGame = responseData.game
+}
 
 module.exports = {
   signUpSuccessful,
@@ -145,5 +152,7 @@ module.exports = {
   createNewGameSuccessful,
   createNewGameFailure,
   showMyAccount,
-  showGameMessage
+  showGameMessage,
+  showNumWinMessage,
+  updateGameSuccess
 }
