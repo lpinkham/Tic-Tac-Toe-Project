@@ -19,6 +19,14 @@ input {
   text-align: center;
 }
 
+.form {
+  border: 2px solid black;
+  color: purple;
+  display: inline;
+  width: 30%;
+
+}
+
 .game-square {
   align-items: center;
   background-color: white;

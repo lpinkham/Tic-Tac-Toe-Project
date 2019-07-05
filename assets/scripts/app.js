@@ -10,7 +10,7 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#account-btn').on('click', authEvents.onMyAccount)
   $('#new-game-btn').on('click', authEvents.onClickNewGame)
-  $('#sign-in-text').on('click', authEvents.onClickSignInText)
+  // $('#sign-in-text').on('click', authEvents.onClickSignInText)
 
   // event handler for game Board
   $('#top-left').on('click', gameLogic.onClickBoardTL)
@@ -22,4 +22,8 @@ $(() => {
   $('#bottom-left').on('click', gameLogic.onClickBoardBL)
   $('#bottom-middle').on('click', gameLogic.onClickBoardBM)
   $('#bottom-right').on('click', gameLogic.onClickBoardBR)
+
+  // look into event.click
+  // revisit array iteration callback functions
+  // $('#board-squares').on('click', authEvents.myFunction)
 })

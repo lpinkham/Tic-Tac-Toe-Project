@@ -19,6 +19,7 @@ const onSignIn = event => {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.signInSuccessful)
+    .then(gameLogic.clearGameHistory)
     .catch(ui.signInFailure)
 }
 
@@ -52,6 +53,12 @@ const onMyAccount = event => {
   // event.preventDefault()
   ui.showMyAccount()
 }
+// const myFunction = (event) => {
+//   onClickNewGame()
+//   const x = event.target
+//   // console.log('x.id is ', x.id)
+//   gameLogic.onClickBoard(x.id)
+// }
 
 module.exports = {
   onSignUp,

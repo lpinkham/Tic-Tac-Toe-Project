@@ -4,6 +4,7 @@ const store = require('../store')
 
 // helper function
 const successMessage = message => {
+  $('#message').show()
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
@@ -11,6 +12,7 @@ const successMessage = message => {
   $('form').trigger('reset')
 }
 const failureMessage = message => {
+  $('#message').show()
   $('#message').text(message)
   $('#message').removeClass('success')
   $('#message').addClass('failure')
@@ -59,18 +61,15 @@ const signUpFailure = responseData => {
 }
 
 const signInSuccessful = responseData => {
-  // successMessage('You signed in successfully')
   store.user = responseData.user
-  // console.log(store.user)
-  // showHide()
   $('#sign-in').hide()
+  $('#sign-up').hide()
   $('#game-board').hide()
   $('#new-game-btn').show()
-  $('#sign-in-text').hide()
-  $('#game-play-text').hide()
-  // $('#account-text').show()
+  $('#game-play-text').show()
   $('#form').trigger('reset')
   $('#account-btn').show()
+  $('#message').hide()
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
@@ -78,6 +77,7 @@ const createNewGameSuccessful = responseData => {
   $('#users-turn').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#message').hide()
   usersTurnHelper()
 }
 const createNewGameFailure = responseData => {
@@ -100,10 +100,10 @@ const changePasswordFailure = responseData => {
 }
 
 const signOutSuccessful = () => {
-  // successMessage('You have signed out')
   $('#change-password').hide()
+  $('#message').hide()
   $('#sign-out').hide()
-  $('#sign-up').hide()
+  $('#sign-up').show()
   $('#sign-in').show()
   $('#new-game-btn').hide()
   $('#game-board').hide()
@@ -112,7 +112,7 @@ const signOutSuccessful = () => {
 }
 
 const signOutFailure = () => {
-  failureMessage('You sign out failed. You are still logged in. Please try again.')
+  failureMessage('Your sign out failed. You are still logged in. Please try again.')
   showHide()
 }
 
