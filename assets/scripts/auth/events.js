@@ -53,12 +53,39 @@ const onMyAccount = event => {
   // event.preventDefault()
   ui.showMyAccount()
 }
-// const myFunction = (event) => {
-//   onClickNewGame()
-//   const x = event.target
-//   // console.log('x.id is ', x.id)
-//   gameLogic.onClickBoard(x.id)
-// }
+const myFunction = (event) => {
+  const x = event.target
+  // gameLogic.onClickBoard(x.id)
+  switch (x.id) {
+    case 'top-left':
+      gameLogic.onClickBoardTL()
+      break
+    case 'top-middle':
+      gameLogic.onClickBoardTM()
+      break
+    case 'top-right':
+      gameLogic.onClickBoardTR()
+      break
+    case 'middle-left':
+      gameLogic.onClickBoardML()
+      break
+    case 'middle-middle':
+      gameLogic.onClickBoardMM()
+      break
+    case 'middle-right':
+      gameLogic.onClickBoardMR()
+      break
+    case 'bottom-left':
+      gameLogic.onClickBoardBL()
+      break
+    case 'bottom-middle':
+      gameLogic.onClickBoardBM()
+      break
+    case 'bottom-right':
+      gameLogic.onClickBoardBR()
+      break
+  }
+}
 
 module.exports = {
   onSignUp,
@@ -67,6 +94,7 @@ module.exports = {
   onSignOut,
   onClickSignInText,
   onClickNewGame,
-  onMyAccount
+  onMyAccount,
+  myFunction
 
 }

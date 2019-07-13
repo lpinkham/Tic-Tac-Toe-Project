@@ -50,6 +50,7 @@ const signUpSuccessful = responseData => {
   $('#sign-out').hide()
   $('#sign-up').hide()
   $('#sign-in').show()
+  $('#or').hide()
 }
 
 const signUpFailure = responseData => {
@@ -70,6 +71,7 @@ const signInSuccessful = responseData => {
   $('#form').trigger('reset')
   $('#account-btn').show()
   $('#message').hide()
+  $('#or').hide()
 }
 const createNewGameSuccessful = responseData => {
   store.newGame = responseData.game
@@ -78,6 +80,7 @@ const createNewGameSuccessful = responseData => {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#message').hide()
+  $('#or').hide()
   usersTurnHelper()
 }
 const createNewGameFailure = responseData => {
@@ -108,6 +111,7 @@ const signOutSuccessful = () => {
   $('#new-game-btn').hide()
   $('#game-board').hide()
   $('#sign-in-text').show()
+  $('#or').show()
   $('form').trigger('reset')
 }
 
