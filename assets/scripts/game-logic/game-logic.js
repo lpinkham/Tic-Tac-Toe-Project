@@ -14,11 +14,13 @@ let gameMoves = []
 let numXWins = 0
 let numOWins = 0
 let numDraws = 0
+let index
 
 const clearGameHistory = () => {
   numXWins = 0
   numOWins = 0
   numDraws = 0
+  index = ''
   ui.showNumWinMessage(`Player X has  ${numXWins} wins. Player O has ${numOWins} wins. There are ${numDraws} draws.`)
 }
 const clearSquares = () => {
@@ -35,6 +37,7 @@ const changePlayersTurn = () => {
     ui.showGameMessage(`Game Over. Player ${playersTurn} won.`)
     TM = TR = ML = MM = MR = BL = BM = BR = TL = true
     isThereAWinner = true
+    api.updateAPIGameBoard(playersTurn, index, true)
     if (playersTurn === 'X') {
       numXWins++
     } else if (playersTurn === 'O') {
@@ -58,9 +61,10 @@ const changePlayersTurn = () => {
 
 const onClickBoardTL = function () {
   if (TL !== true) {
-    gameMoves[0] = playersTurn
+    index = 0
+    gameMoves[index] = playersTurn
     $('#top-left').text(`${playersTurn}`)
-    api.updateAPIGameBoard(playersTurn, 0, false)
+    api.updateAPIGameBoard(playersTurn, index, false)
       .then(ui.updateGameSuccess)
     numGameMoves++
     isGameOver(0, 1, 2)
@@ -130,6 +134,7 @@ const onClickBoardMM = function () {
     ui.showGameMessage('That square is already taken')
   }
 }
+
 const onClickBoardMR = function () {
   if (MR !== true) {
     gameMoves[5] = playersTurn

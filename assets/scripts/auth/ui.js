@@ -67,6 +67,7 @@ const signInSuccessful = responseData => {
   $('#sign-up').hide()
   $('#game-board').hide()
   $('#new-game-btn').show()
+  $('#gamestats').show()
   $('#game-play-text').show()
   $('#form').trigger('reset')
   $('#account-btn').show()
@@ -109,6 +110,7 @@ const signOutSuccessful = () => {
   $('#sign-up').show()
   $('#sign-in').show()
   $('#new-game-btn').hide()
+  $('#gamestats').hide()
   $('#game-board').hide()
   $('#sign-in-text').show()
   $('#or').show()
@@ -140,6 +142,16 @@ const updateGameSuccess = (responseData) => {
   store.newGame = responseData.game
 }
 
+const showgamestats = (games) => {
+  const gamesplayed = games.games.filter(game => game.over === true)
+  let totalgamesplayed = 0
+  for (let i = 0; i < gamesplayed.length; i++) {
+    totalgamesplayed = totalgamesplayed + 1
+  }
+  $('#userstats').show()
+  $('#userstats').text(`total games played by user: ${totalgamesplayed}`)
+}
+
 module.exports = {
   signUpSuccessful,
   signUpFailure,
@@ -157,5 +169,6 @@ module.exports = {
   showMyAccount,
   showGameMessage,
   showNumWinMessage,
-  updateGameSuccess
+  updateGameSuccess,
+  showgamestats
 }

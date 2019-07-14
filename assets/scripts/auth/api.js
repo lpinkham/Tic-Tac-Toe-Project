@@ -81,6 +81,17 @@ const showAPIGameBoard = () => {
   })
 }
 
+const showstats = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -88,5 +99,6 @@ module.exports = {
   signOut,
   createGameBoard,
   updateAPIGameBoard,
-  showAPIGameBoard
+  showAPIGameBoard,
+  showstats
 }

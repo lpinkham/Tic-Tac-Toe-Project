@@ -22,36 +22,38 @@
           <input type="password" name="passwords[new]" placeholder="New Password">
         <button class="btn-primary">Change Password</button>
         </form>
-
         <form id="sign-out" class="">
           <button class="btn-primary">Sign Out</button>
         </form>
       </div>
+<main>
   <h5 id="message" class="message-header"></h5>
       <h1>Tic Tac Toe</h1>
 
-      <main>
         <p class="want-to-play center" id="game-play-text">Want to play a game of Tic Tac Toe?</p>
 
       <div id="sign-in-up">
         <div class="form">
         <form id="sign-in" class="center">
-          <input type="email" name="credentials[email]" placeholder="Enter email address"><br>
-          <input type="password" name="credentials[password]" placeholder="Password"><br>
+          <input type="email" name="credentials[email]" placeholder="Enter email address"><br />
+          <input type="password" name="credentials[password]" placeholder="Password"><br />
           <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
         </form>
 <h6 id="or" class="center">or</h6>
         <form id="sign-up" class="center">
           <h5>Sign Up</h5>
-          <input class="" type="email" name="credentials[email]" placeholder="email address (not a real one)"><br>
-          <input class="" type="password" name="credentials[password]" placeholder="Password"><br>
-          <input class="" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
+          <input type="email" name="credentials[email]" placeholder="email address (not a real one)"><br>
+          <input type="password" name="credentials[password]" placeholder="Password"><br>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
           <button class="btn-primary">Sign-Up!</button>
         </form>
       </div>
       </div>
 
-        <div class="center"><button class="hide" id="new-game-btn">New Game</button>
+        <div class="center">
+          <button class="btn-primary hide" id="gamestats">user stats</button>
+          <div id="userstats" class="hide"></div>
+          <button class="hide" id="new-game-btn">New Game</button>
         </div>
 
         <div class="container outer-box hide center" id="game-board">

@@ -12,4 +12,5 @@ $(() => {
   $('#new-game-btn').on('click', authEvents.onClickNewGame)
 
   $('#board-squares').on('click', authEvents.myFunction)
+  $('#gamestats').on('click', authEvents.onShowStats)
 })

@@ -87,6 +87,13 @@ const myFunction = (event) => {
   }
 }
 
+const onShowStats = event => {
+  event.preventDefault()
+  api.showstats()
+    .then(ui.showgamestats)
+    .catch()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -95,6 +102,7 @@ module.exports = {
   onClickSignInText,
   onClickNewGame,
   onMyAccount,
-  myFunction
+  myFunction,
+  onShowStats
 
 }
