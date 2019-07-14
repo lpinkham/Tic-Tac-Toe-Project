@@ -114,6 +114,7 @@ const signOutSuccessful = () => {
   $('#game-board').hide()
   $('#sign-in-text').show()
   $('#or').show()
+  $('#userstats').hide()
   $('form').trigger('reset')
 }
 
