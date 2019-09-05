@@ -58,10 +58,10 @@
 
         <div class="container outer-box hide center" id="game-board">
           <h6 id="wins" class="hide"></h6>
-        <h2 id="game-message">Player X - you go first. Place an X somewhere on the board</h2>
+        <h4 id="game-message">Player X - you go first. Place an X somewhere on the board</h4>
 
-      <div id="board-squares">
-          <div class="row">
+      <div class="game" id="board-squares">
+          <!-- <div class="row">
           <div class="game-square" id="top-left"></div>
           <div class="game-square" id="top-middle"></div>
           <div class="game-square" id="top-right"></div>
@@ -75,7 +75,22 @@
           <div class="game-square" id="bottom-left"></div>
           <div class="game-square" id="bottom-middle"></div>
           <div class="game-square" id="bottom-right"></div>
-        </div>
+        </div> -->
+        <div class="row">
+      <div class="boardsquare bottom" id="top-left"></div>
+      <div class="boardsquare centersq" id="top-middle"></div>
+      <div class="boardsquare bottom" id="top-right"></div>
+  </div>
+  <div  class="row">
+      <div class="boardsquare bottom" id="middle-left"></div>
+      <div class="boardsquare centersq" id="middle-middle"></div>
+      <div class="boardsquare bottom" id="middle-right"></div>
+  </div>
+  <div  class="row">
+      <div class="boardsquare" id="bottom-left"></div>
+      <div class="boardsquare bottomcenter" id="bottom-middle"></div>
+      <div class="boardsquare" id="bottom-right"></div>
+  </div>
       </div>
       <p id="demo"></p>
 </div>
