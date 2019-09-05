@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div class="my-account" id="account-text"><button class="hide" id="account-btn">My Account</button>
+      </div>
+      <div class="hide" id="myAccount">
+        <form id="change-password" class="">
+        <h6>Change Your Password</h6>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+        <button class="btn-primary">Change Password</button>
+        </form>
+        <form id="sign-out" class="">
+          <button class="btn-primary">Sign Out</button>
+        </form>
+      </div>
+<main>
+  <h5 id="message" class="message-header"></h5>
+      <h1>Tic Tac Toe</h1>
+
+        <p class="want-to-play center" id="game-play-text">Want to play a game of Tic Tac Toe?</p>
+
+      <div id="sign-in-up">
+        <div class="form">
+        <form id="sign-in" class="center">
+          <input type="email" name="credentials[email]" placeholder="Enter email address"><br />
+          <input type="password" name="credentials[password]" placeholder="Password"><br />
+          <button class="btn-primary" id="sign-in-btn">Sign-In!</button>
+        </form>
+<h6 id="or" class="center">or</h6>
+        <form id="sign-up" class="center">
+          <h5>Sign Up</h5>
+          <input type="email" name="credentials[email]" placeholder="email address (not a real one)"><br>
+          <input type="password" name="credentials[password]" placeholder="Password"><br>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
+          <button class="btn-primary">Sign-Up!</button>
+        </form>
+      </div>
+      </div>
+
+        <div class="center">
+          <button class="btn-primary hide" id="gamestats">user stats</button>
+          <div id="userstats" class="hide"></div>
+          <button class="hide" id="new-game-btn">New Game</button>
+        </div>
+
+        <div class="container outer-box hide center" id="game-board">
+          <h6 id="wins" class="hide"></h6>
+        <h4 id="game-message">Player X - you go first. Place an X somewhere on the board</h4>
+
+      <div class="game" id="board-squares">
+          <!-- <div class="row">
+          <div class="game-square" id="top-left"></div>
+          <div class="game-square" id="top-middle"></div>
+          <div class="game-square" id="top-right"></div>
+        </div>
+        <div class="row">
+          <div class="game-square" id="middle-left"></div>
+          <div class="game-square" id="middle-middle"></div>
+          <div class="game-square" id="middle-right"></div>
+        </div>
+        <div class="row">
+          <div class="game-square" id="bottom-left"></div>
+          <div class="game-square" id="bottom-middle"></div>
+          <div class="game-square" id="bottom-right"></div>
+        </div> -->
+        <div class="row">
+      <div class="boardsquare bottom" id="top-left"></div>
+      <div class="boardsquare centersq" id="top-middle"></div>
+      <div class="boardsquare bottom" id="top-right"></div>
+  </div>
+  <div  class="row">
+      <div class="boardsquare bottom" id="middle-left"></div>
+      <div class="boardsquare centersq" id="middle-middle"></div>
+      <div class="boardsquare bottom" id="middle-right"></div>
+  </div>
+  <div  class="row">
+      <div class="boardsquare" id="bottom-left"></div>
+      <div class="boardsquare bottomcenter" id="bottom-middle"></div>
+      <div class="boardsquare" id="bottom-right"></div>
+  </div>
+      </div>
+      <p id="demo"></p>
+</div>
+
+
+      </main>
+
+    </body>
+</html>
